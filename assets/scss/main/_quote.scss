@@ -1,0 +1,62 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.quote {
+    .container {
+        background-image: url("../images/quote-background.jpg");
+        background-size: cover;
+    }
+
+    &__text {
+        padding: 100px 300px 100px 160px;
+        position: relative;
+
+        @include breakpoint(md) {
+            padding: 50px 150px 50px 80px;
+        }
+
+        @include breakpoint(sm) {
+            padding: 30px 50px 30px 20px;
+        }
+
+        img {
+            position: absolute;
+            left: 101px;
+            top: 72px;
+            max-width: 100px;
+            width: 100%;
+
+            @include breakpoint(md) {
+                left: 33px;
+                top: 25px;
+                max-width: 70px;
+            }
+
+            @include breakpoint(sm) {
+                left: 5px;
+                top: 21px;
+                max-width: 35px;
+            }
+        }
+
+        p {
+            font-family: "Lato", sans-serif;
+            font-size: 32px;
+            line-height: 46px;
+            color: white;
+            margin-bottom: 40px;
+
+            @include breakpoint(md) {
+                font-size: 26px;
+                line-height: 35px;
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint(sm) {
+                font-size: 18px;
+                line-height: 27px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

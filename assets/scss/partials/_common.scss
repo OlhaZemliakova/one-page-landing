@@ -1,2 +1,200 @@
-@import 'variables.scss';
-@import 'mixins.scss'
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease-in;
+}
+
+body {
+    font-style: normal;
+    font-weight: 400;
+    color: $primary-dark;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+    width: 90%;
+
+    @include breakpoint(sm) {
+        max-width: 540px;
+    }
+
+    @include breakpoint(md) {
+        max-width: 720px;
+    }
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col- {
+    &lg-6 {
+        width: 50%;
+    }
+
+    &md-12 {
+        @include breakpoint(md) {
+            width: 100%;
+        }
+    }
+
+    &sm-12 {
+        @include breakpoint(sm) {
+            width: 100%;
+        }
+    }
+}
+
+.title-second-level {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    line-height: 48px;
+    color: $primary-dark;
+
+    @include breakpoint(md) {
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    @include breakpoint(sm) {
+        font-size: 26px;
+        line-height: 39px;
+    }
+}
+
+.button {
+    text-decoration: none;
+    display: inline;
+    color: $light-salmon;
+    position: relative;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    width: fit-content;
+    text-transform: uppercase;
+
+    @include breakpoint(sm) {
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0.08em;
+    }
+
+    &:hover {
+        color: $dark-salmon;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: $light-salmon;
+        height: 13px;
+        opacity: 0.3;
+        right: -10px;
+        bottom: -4px;
+        width: 100%;
+    }
+
+    &:hover::after {
+        background-color: $dark-salmon;
+    }
+
+    &--lg {
+        display: inline-block;
+        border: 1px solid $light-gray;
+        padding-left: 88px;
+        padding-right: 95px;
+        padding-top: 32px;
+        padding-bottom: 36px;
+
+        @include breakpoint(md) {
+            padding-left: 78px;
+            padding-right: 85px;
+            padding-top: 22px;
+            padding-bottom: 26px;
+        }
+
+        @include breakpoint(sm) {
+            padding-left: 63px;
+            padding-right: 70px;
+            padding-top: 12px;
+            padding-bottom: 16px;
+        }
+
+        &:hover {
+            border: 1px solid $dark-salmon;
+        }
+
+        &::after {
+            right: 88px;
+            bottom: 33px;
+            width: calc(100% - 183px);
+
+            @include breakpoint(md) {
+                right: 78px;
+                bottom: 23px;
+                width: calc(100% - 173px);
+            }
+
+            @include breakpoint(sm) {
+                right: 68px;
+                bottom: 13px;
+                width: calc(100% - 143px);
+            }
+        }
+    }
+}
+
+.color-text {
+    color: $light-green;
+    font-style: italic;
+}
+
+.description {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 26px;
+    color: $primary-dark;
+
+    @include breakpoint(sm) {
+        font-size: 15px;
+        line-height: 21px;
+    }
+}
+
+.dollar-sign {
+    color: $light-gray;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 50px;
+    margin-right: 10px;
+
+    @include breakpoint(md) {
+        margin-right: 5px;
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    @include breakpoint(sm) {
+        margin-right: 5px;
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+.author {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 20px;
+    color: white;
+}

@@ -1,0 +1,48 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.video {
+    padding: 120px 100px;
+
+    @include breakpoint(md) {
+        padding: 80px 60px;
+    }
+
+    @include breakpoint(sm) {
+        padding: 80px 60px;
+    }
+
+    &__content {
+
+        img {
+            margin-bottom: 50px;
+            max-width: 970px;
+            width: 100%;
+
+            @include breakpoint(md) {
+                margin-bottom: 25px;
+            }
+        
+            @include breakpoint(sm) {
+                margin-bottom: 25px;
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+
+            @include breakpoint(md) {
+                margin-bottom: 15px;
+            }
+        
+            @include breakpoint(sm) {
+                margin-bottom: 15px;
+            }
+        }
+
+        .description {
+            width: 100%;
+            max-width: 897px;
+        }
+    }
+}

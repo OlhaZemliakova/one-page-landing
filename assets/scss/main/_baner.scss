@@ -1,0 +1,52 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.baner {
+    background-image: url("../images/first-screen-image.jpg");
+    background-size: cover;
+    position: relative;
+
+    
+    &__content {
+        padding: 260px 0 466px;
+
+        @include breakpoint(md) {
+            padding: 150px 0 250px;
+        }
+
+        @include breakpoint(sm) {
+            padding: 150px 0 250px;
+        }
+        
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 44px;
+            line-height: 52px;
+            max-width: 523px;
+            width: 100%;
+            margin-bottom: 20px;
+
+            @include breakpoint(md) {
+                font-size: 35px;
+                line-height: 40px;
+            }
+    
+            @include breakpoint(sm) {
+                font-size: 35px;
+                line-height: 40px;
+            }
+        }
+
+        p {
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 26px;
+            opacity: 0.8;
+            max-width: 439px;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+}

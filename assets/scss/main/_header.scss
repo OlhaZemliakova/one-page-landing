@@ -1,0 +1,126 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.header {
+    background: linear-gradient(
+            270deg,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0.244636) 24.1%,
+            rgba(255, 255, 255, 0) 47.19%
+        ),
+        rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(4.5px);
+    padding: 24px 0px;
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    z-index: 1;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint(sm) {
+            position: relative;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__logo {
+        max-width: 108px;
+        width: 100%;
+    }
+
+    &__nav {
+        @include breakpoint(sm) {
+            display: none;
+            width: 100%;
+            margin-top: 20px;
+
+            &.active {
+                display: block;
+            }
+        }
+        ul {
+            @include breakpoint(sm) {
+                display: block;
+                margin-right: 0;
+            }
+
+            li {
+                display: inline-block;
+                margin-right: 30px;
+                position: relative;
+
+                @include breakpoint(sm) {
+                    display: block;
+                    margin-right: 0;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                @include breakpoint(md) {
+                    margin-right: 15px;
+                }
+
+                &:last-child {
+                    margin-right: 0px;
+                }
+
+                &:hover::after {
+                    content: "";
+                    width: 44px;
+                    height: 3px;
+                    position: absolute;
+                    background-color: $light-salmon;
+                    right: calc(50% - 20px);
+                    bottom: 0;
+                    opacity: 0.3;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $primary-dark;
+                    font-family: "Lato", sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+    .burger-button {
+        display: none;
+
+        @include breakpoint(sm) {
+            display: block;
+            position: absolute;
+            right: 0;
+        }
+
+        &__icon {
+            display: flex;
+            width: 40px;
+            height: 24px;
+            background: transparent;
+            border-top: 2px solid;
+            border-bottom: 2px solid;
+            color: $primary-dark;
+            font-size: 0;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                background: $primary-dark;
+            }
+        }
+    }
+}

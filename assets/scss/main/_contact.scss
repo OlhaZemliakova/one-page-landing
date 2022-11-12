@@ -1,0 +1,88 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+
+.contact {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 60px;
+        padding-bottom: 104px;
+        border-top: 1px solid $light-gray;
+
+        @include breakpoint(sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include breakpoint(md) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        width: 40%;
+
+        @include breakpoint(sm) {
+            width: 100%;
+            text-align: start;
+            margin-bottom: 15px;
+        }
+
+        @include breakpoint(md) {
+            width: 100%;
+            text-align: start;
+            margin-bottom: 15px;
+        }
+
+        .title-second-level {
+            margin-bottom: 29px;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+        @include breakpoint(sm) {
+            width: 100%;
+        }
+
+        @include breakpoint(md) {
+            width: 100%;
+        }
+
+        input {
+            flex: 1;
+            border: 0;
+            outline: none;
+            border-bottom: 1px solid $light-gray;
+            margin-bottom: 40px;
+
+            @include breakpoint(sm) {
+                margin-bottom: 25px;
+            }
+
+            @include breakpoint(md) {
+                margin-bottom: 25px;
+            }
+
+            &::placeholder {
+                font-family: "Playfair Display", serif;
+                font-style: italic;
+                font-size: 18px;
+                line-height: 20px;
+
+                @include breakpoint(sm) {
+                    font-size: 16px;
+                }
+    
+                @include breakpoint(md) {
+                    font-size: 16px;
+                }
+    
+            }
+        }
+    }
+}
